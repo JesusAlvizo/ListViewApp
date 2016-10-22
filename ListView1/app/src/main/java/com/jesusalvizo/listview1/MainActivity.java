@@ -3,14 +3,12 @@ package com.jesusalvizo.listview1;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 evaluar();
-                //String newItem = textInput.getText().toString();
-                //arrayList.add(newItem);
                 adapter.notifyDataSetChanged();
                 textInput.setText("");
 
@@ -57,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            // We override the onItemClick function
-            // AdapterView<> has an unidentified data type (?) so it can manage any type.
-            // It is also an AdapterView so it can handle Lists, Spinners, Grids and so on
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -70,15 +63,6 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-
-                //If for some reason we would want the list to disappear wen the user clicks on it:
-                //parent.setVisibility(View.GONE);
-
-                //If we wanted that the name the user clicks on appears on the log
-                //Log.i("Person tapped: ", myFamily.get(position));
-
-                //Toast to the person clicked
-                //Toast.makeText(getApplicationContext(),"Hello " + arrayList.get(position), Toast.LENGTH_LONG);
 
             }
 
